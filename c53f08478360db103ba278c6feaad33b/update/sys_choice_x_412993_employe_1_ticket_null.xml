@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_choice">
+  <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>1ed4f5d774544b7cb725d191176317c4</sys_id>
+    <sys_scope display_value="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_scope>
+    <sys_update_name>sys_choice_x_412993_employe_1_ticket_state</sys_update_name>
+    <element>state</element>
+    <hint>Submitted by the employee and not yet assigned to a support group.</hint>
+    <inactive>false</inactive>
+    <label>New</label>
+    <language>en</language>
+    <name>x_412993_employe_1_ticket</name>
+    <sequence>1</sequence>
+    <value>1</value>
+  </sys_choice>
+</record_update>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <derived_priority>100</derived_priority>
+        <description>Fired when an employee issue ticket is first submitted. parm1 = requester, parm2 = number.</description>
+        <event_name>x_412993_employe_1.ticket.submitted</event_name>
+        <fired_by>Business Rule: ESR - Fire lifecycle events</fired_by>
+        <priority>100</priority>
+        <queue/>
+        <suffix>ticket.submitted</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:03:19</sys_created_on>
+        <sys_id>0cf29bf1d5ad4c92b675c92dc524cebb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_412993_employe_1.ticket.submitted</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sysevent_register_0cf29bf1d5ad4c92b675c92dc524cebb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:03:19</sys_updated_on>
+        <table>x_412993_employe_1_ticket</table>
+    </sysevent_register>
+</record_update>

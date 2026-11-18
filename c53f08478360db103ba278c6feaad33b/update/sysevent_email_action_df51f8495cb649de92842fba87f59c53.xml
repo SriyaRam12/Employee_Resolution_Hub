@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>false</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_412993_employe_1_ticket</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_digest>false</default_digest>
+        <default_interval/>
+        <description>Sends the requester the resolution code and resolution notes, and explains how to request a reopen if the problem persists.</description>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[--------------------------------------------------------------------------------
+]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digest_type>single</digest_type>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>x_412993_employe_1.ticket.resolved</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>event</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>Hello ${requester.first_name},</p>
+<p>Your ticket has been resolved.</p>
+<table cellpadding="6" cellspacing="0" border="0">
+  <tr><td><strong>Ticket</strong></td><td>${number}</td></tr>
+  <tr><td><strong>Category</strong></td><td>${category} / ${subcategory}</td></tr>
+  <tr><td><strong>Short description</strong></td><td>${short_description}</td></tr>
+  <tr><td><strong>Priority</strong></td><td>${priority}</td></tr>
+  <tr><td><strong>State</strong></td><td>${state}</td></tr>
+  <tr><td><strong>Assignment group</strong></td><td>${assignment_group}</td></tr>
+  <tr><td><strong>Assigned to</strong></td><td>${assigned_to}</td></tr>
+  <tr><td><strong>Resolution code</strong></td><td>${resolution_code}</td></tr>
+  <tr><td><strong>Resolution time (hours)</strong></td><td>${resolution_hours}</td></tr>
+</table>
+<p><strong>Resolution notes</strong></p>
+<div>${resolution_notes}</div>
+<p>If the problem has not actually gone away, open the ticket and use <strong>Request Reopen</strong> - tell us why in the Reopen Reason and it will go straight back to the support team.</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>ESR - Ticket Resolved</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>requester</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>Ticket ${number} resolved: ${short_description}</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:03:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>df51f8495cb649de92842fba87f59c53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESR - Ticket Resolved</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sysevent_email_action_df51f8495cb649de92842fba87f59c53</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:03:19</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template/>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>

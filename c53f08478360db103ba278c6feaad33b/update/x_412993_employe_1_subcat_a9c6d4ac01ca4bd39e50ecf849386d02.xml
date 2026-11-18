@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_412993_employe_1_subcat">
+    <x_412993_employe_1_subcat action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>other</category>
+        <description>Questions that do not fit another category.</description>
+        <name>General Inquiry</name>
+        <order>10</order>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:03:20</sys_created_on>
+        <sys_id>a9c6d4ac01ca4bd39e50ecf849386d02</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:03:20</sys_updated_on>
+    </x_412993_employe_1_subcat>
+</record_update>
