@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 02:20:50</sys_created_on>
+        <sys_id>22b00b48f54840bbbb26f34d9f9f4497</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_412993_employe_1_ticket.x_412993_employe_1.manager</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_security_acl display_value="x_412993_employe_1_ticket">19281fd2d8d9459eb8b0a2b038ec0a8e</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_22b00b48f54840bbbb26f34d9f9f4497</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 02:20:50</sys_updated_on>
+        <sys_user_role display_value="x_412993_employe_1.manager" name="x_412993_employe_1.manager">dba0736796fa451b916ac5da06539dba</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

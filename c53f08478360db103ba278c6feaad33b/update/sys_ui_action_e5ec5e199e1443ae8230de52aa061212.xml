@@ -3,9 +3,7 @@
         <action_name>esr_resume_work</action_name>
         <active>true</active>
         <client>false</client>
-        <client_script_v2><![CDATA[function onClick(g_form) {
-
-}]]></client_script_v2>
+        <client_script_v2/>
         <comments/>
         <condition>current.state == 4</condition>
         <form_action>true</form_action>
@@ -32,20 +30,11 @@
         <name>Resume Work</name>
         <onclick/>
         <order>210</order>
-        <script><![CDATA[if (current.getValue('state') == '4') {
-
-    current.setValue('on_hold_reason', '');
-    current.setValue('state', '3');
-
-    current.update();
-
-    gs.addInfoMessage('Work resumed on this ticket.');
-    action.setRedirectURL(current);
-
-} else {
-    gs.addErrorMessage('This ticket is not currently On Hold.');
-    action.setRedirectURL(current);
-}]]></script>
+        <script><![CDATA[current.on_hold_reason = '';
+current.state = 3;
+current.update();
+gs.addInfoMessage('Work resumed on this ticket.');
+action.setRedirectURL(current);]]></script>
         <show_form_icon_only>false</show_form_icon_only>
         <show_insert>true</show_insert>
         <show_list_icon_only>false</show_list_icon_only>

@@ -28,40 +28,35 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[/**
- * ESR - Manage lifecycle timestamps
- * Before / Update / Order 300
+ * ESR - Manage lifecycle timestamps   (before / update / order 300)
  *
- * Handles:
- * 1. Resolved lifecycle timestamps
- * 2. Closed lifecycle timestamps
- * 3. Reopening from Resolved OR Closed
- * 4. Reopen count increment
- * 5. Active status
- * 6. Clearing stale lifecycle values
- * 7. State-change audit work notes
+ * The single owner of every lifecycle stamp on the ticket. Driven purely by
+ * state transitions, it runs only when `state` actually changed.
  *
- * No current.update() is used.
+ *   -> 5 Resolved : resolved_at / resolved_by / resolution_hours, active=false
+ *   -> 6 Closed   : closed_at / closed_by, active=false, resolved_at preserved
+ *   5 -> 3 reopen : clears the resolution stamps, stamps reopened_at,
+ *                   increments reopen_count, active=true, clears hold reason
+ *   1..4          : active=true, closed_at / closed_by cleared
+ *   leaving 4     : on_hold_reason cleared
+ *
+ * Also appends a short audit line to the work_notes journal. This is a before
+ * rule, so current.update() is deliberately never called.
  */
-
-(function manageLifecycleTimestamps(current, previous) {
-
-    // Only execute on updates
+;(function manageLifecycleTimestamps(current, previous) {
     if (!previous) {
-        return;
+        return
     }
 
-    var state = current.getValue('state');
-    var previousState = previous.getValue('state');
-
-    // Only run when state actually changes
+    var state = current.getValue('state')
+    var previousState = previous.getValue('state')
     if (state === previousState) {
-        return;
+        return
     }
 
-    var utils = new x_412993_employe_1.EsrTicketUtils();
-
-    var nowValue = new GlideDateTime().getValue();
-    var userId = gs.getUserID();
+    var utils = new x_412993_employe_1.EsrTicketUtils()
+    var nowValue = new GlideDateTime().getValue()
+    var userId = gs.getUserID()
 
     var STATE_LABELS = {
         '1': 'New',
@@ -69,147 +64,83 @@
         '3': 'In Progress',
         '4': 'On Hold',
         '5': 'Resolved',
-        '6': 'Closed'
-    };
+        '6': 'Closed',
+    }
 
-    var fromLabel = STATE_LABELS[previousState] || previousState || 'Unknown';
-    var toLabel = STATE_LABELS[state] || state || 'Unknown';
+    var fromLabel = STATE_LABELS[previousState] || previousState || 'Unknown'
+    var toLabel = STATE_LABELS[state] || state || 'Unknown'
+    var audit = 'State changed from ' + fromLabel + ' to ' + toLabel + '.'
 
-    var audit = 'State changed from ' + fromLabel + ' to ' + toLabel + '.';
-
-
-    /* ==========================================================
-       ENTERING RESOLVED (5)
-       ========================================================== */
-
+    /* ---------------------------------------------------------------
+     * Entering Resolved
+     * ------------------------------------------------------------- */
     if (state === '5') {
+        current.setValue('resolved_at', nowValue)
+        current.setValue('resolved_by', userId)
+        current.setValue('resolution_hours', utils.hoursBetween(current.getValue('opened_at'), nowValue))
+        current.setValue('active', false)
 
-        current.setValue('resolved_at', nowValue);
-        current.setValue('resolved_by', userId);
-
-        current.setValue(
-            'resolution_hours',
-            utils.hoursBetween(
-                current.getValue('opened_at'),
-                nowValue
-            )
-        );
-
-        current.setValue('active', false);
-
-        var resolutionCode = current.getDisplayValue('resolution_code');
-
+        var resolutionCode = current.getDisplayValue('resolution_code')
         if (resolutionCode) {
-            audit += ' Resolution code: ' + resolutionCode + '.';
+            audit += ' Resolution code: ' + resolutionCode + '.'
         }
     }
 
-
-    /* ==========================================================
-       ENTERING CLOSED (6)
-       ========================================================== */
-
+    /* ---------------------------------------------------------------
+     * Entering Closed - resolved_at is deliberately left untouched
+     * ------------------------------------------------------------- */
     if (state === '6') {
-
-        current.setValue('closed_at', nowValue);
-        current.setValue('closed_by', userId);
-
-        current.setValue('active', false);
+        current.setValue('closed_at', nowValue)
+        current.setValue('closed_by', userId)
+        current.setValue('active', false)
     }
 
+    /* ---------------------------------------------------------------
+     * Reopen: leaving Resolved back to In Progress
+     * ------------------------------------------------------------- */
+    if (previousState === '5' && state === '3') {
+        current.setValue('resolved_at', '')
+        current.setValue('resolved_by', '')
+        current.setValue('resolution_hours', '')
+        current.setValue('reopened_at', nowValue)
 
-    /* ==========================================================
-       REOPENING
-       Supports:
-       Resolved (5) -> In Progress (3)
-       Closed (6)   -> In Progress (3)
-       ========================================================== */
-
-    var isReopening =
-        (previousState === '5' || previousState === '6') &&
-        state === '3';
-
-    if (isReopening) {
-
-        // Clear previous resolution details
-        current.setValue('resolved_at', '');
-        current.setValue('resolved_by', '');
-        current.setValue('resolution_hours', '');
-
-        // Clear previous closure details
-        current.setValue('closed_at', '');
-        current.setValue('closed_by', '');
-
-        // Stamp the reopen date/time
-        current.setValue('reopened_at', nowValue);
-
-        // Increment reopen counter
-        var reopenCount = parseInt(
-            current.getValue('reopen_count'),
-            10
-        );
-
+        var reopenCount = parseInt(current.getValue('reopen_count'), 10)
         if (isNaN(reopenCount) || reopenCount < 0) {
-            reopenCount = 0;
+            reopenCount = 0
         }
+        current.setValue('reopen_count', reopenCount + 1)
 
-        current.setValue(
-            'reopen_count',
-            reopenCount + 1
-        );
+        current.setValue('active', true)
+        current.setValue('on_hold_reason', '')
 
-        // Make ticket active again
-        current.setValue('active', true);
-
-        // Clear previous hold reason
-        current.setValue('on_hold_reason', '');
-
-        // Add reopen reason to audit
-        var reopenReason = current.getValue('reopen_reason');
-
+        var reopenReason = current.getValue('reopen_reason')
         if (reopenReason) {
-            audit += ' Reopen reason: ' + reopenReason + '.';
+            audit += ' Reopen reason: ' + reopenReason
         }
     }
 
-
-    /* ==========================================================
-       OPEN STATES (1, 2, 3, 4)
-       ========================================================== */
-
-    if (
-        state === '1' ||
-        state === '2' ||
-        state === '3' ||
-        state === '4'
-    ) {
-
-        current.setValue('active', true);
-
-        // Clear old closure information
-        current.setValue('closed_at', '');
-        current.setValue('closed_by', '');
+    /* ---------------------------------------------------------------
+     * Any open state (New .. On Hold) - the ticket is live again
+     * ------------------------------------------------------------- */
+    if (state === '1' || state === '2' || state === '3' || state === '4') {
+        current.setValue('active', true)
+        current.setValue('closed_at', '')
+        current.setValue('closed_by', '')
     }
 
-
-    /* ==========================================================
-       LEAVING ON HOLD
-       ========================================================== */
-
+    /* ---------------------------------------------------------------
+     * Leaving On Hold - the hold reason no longer applies
+     * ------------------------------------------------------------- */
     if (previousState === '4' && state !== '4') {
-
-        current.setValue('on_hold_reason', '');
+        current.setValue('on_hold_reason', '')
     }
 
-
-    /* ==========================================================
-       AUDIT TRAIL
-       ========================================================== */
-
-    current.setValue('work_notes', audit);
-
-
-})(current, previous);]]></script>
+    /* ---------------------------------------------------------------
+     * Audit trail - one short journal line per transition
+     * ------------------------------------------------------------- */
+    current.setValue('work_notes', audit)
+})(current, previous)
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-11-18 18:01:24</sys_created_on>

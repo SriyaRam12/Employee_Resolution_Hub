@@ -28,145 +28,90 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[/**
- * ESR - Workflow validation
- * Before / Insert + Update / Order 250
+ * ESR - Workflow validation   (before / insert + update / order 250)
+ *
+ * The authoritative, server-side workflow gates. The UI actions do their own
+ * front-door checks, but records can also be changed from lists, the REST API
+ * and the UI page - so every gate is enforced here as well. A failed gate
+ * reports a helpful message and aborts the save.
  *
  * Gates:
- *   -> 4 On Hold     requires On Hold Reason AND Work Notes
- *   -> 5 Resolved    requires Resolution Notes AND Resolution Code
- *   5 -> 3 Reopen    requires Reopen Reason
- *   -> 6 Closed      only from Resolved, manager/admin only
- *   state 6          frozen for non-privileged users
+ *   -> 4 On Hold    requires on_hold_reason
+ *   -> 5 Resolved   requires resolution_notes AND resolution_code
+ *   5 -> 3 reopen   requires reopen_reason
+ *   -> 6 Closed     only from state 5, and only for manager / admin
+ *   state 6         frozen for everybody except manager / admin
  */
+;(function validateTicketWorkflow(current, previous) {
+    var isInsert = current.operation() === 'insert'
 
-(function validateTicketWorkflow(current, previous) {
+    var state = current.getValue('state')
+    var previousState = !isInsert && previous ? previous.getValue('state') : ''
+    var stateChanged = isInsert || state !== previousState
 
-    var isInsert = current.operation() === 'insert';
-
-    var state = current.getValue('state');
-    var previousState = (!isInsert && previous)
-        ? previous.getValue('state')
-        : '';
-
-    var stateChanged = isInsert || state !== previousState;
-
-    var isPrivileged =
-        gs.hasRole('x_412993_employe_1.manager') ||
-        gs.hasRole('admin');
+    var isPrivileged = gs.hasRole('x_412993_employe_1.manager') || gs.hasRole('admin')
 
     function reject(message) {
-        gs.addErrorMessage(message);
-        current.setAbortAction(true);
+        gs.addErrorMessage(message)
+        current.setAbortAction(true)
     }
 
-    /* =========================================================
-       CLOSED TICKET PROTECTION
-       ========================================================= */
-
+    /* ---------------------------------------------------------------
+     * A closed ticket is frozen - managers and admins only
+     * ------------------------------------------------------------- */
     if (!isInsert && previousState === '6' && !isPrivileged) {
-
         reject(
             'This ticket is closed and can no longer be modified. Ask a manager to reopen it, or raise a new ticket.'
-        );
-
-        return;
+        )
+        return
     }
 
-    /* =========================================================
-       ON HOLD VALIDATION
-       Requires BOTH On Hold Reason and Work Notes
-       ========================================================= */
-
-    if (stateChanged && state === '4') {
-
-        if (!current.getValue('on_hold_reason')) {
-
-            reject(
-                'Select an On Hold Reason before placing this ticket on hold.'
-            );
-
-            return;
-        }
-
-        if (current.work_notes.nil()) {
-
-            reject(
-                'Enter Work Notes explaining why this ticket is being placed on hold.'
-            );
-
-            return;
-        }
+    /* ---------------------------------------------------------------
+     * On Hold needs a reason
+     * ------------------------------------------------------------- */
+    if (stateChanged && state === '4' && !current.getValue('on_hold_reason')) {
+        reject('Select an On Hold Reason before placing this ticket on hold.')
+        return
     }
 
-    /* =========================================================
-       RESOLUTION VALIDATION
-       ========================================================= */
-
+    /* ---------------------------------------------------------------
+     * Resolving needs resolution notes AND a resolution code.
+     * Resolution notes are a hard requirement before resolving.
+     * ------------------------------------------------------------- */
     if (stateChanged && state === '5') {
-
         if (!current.getValue('resolution_notes')) {
-
-            reject(
-                'Resolution Notes are mandatory before a ticket can be resolved. Describe what was done to fix it.'
-            );
-
-            return;
+            reject('Resolution Notes are mandatory before a ticket can be resolved. Describe what was done to fix it.')
+            return
         }
-
         if (!current.getValue('resolution_code')) {
-
-            reject(
-                'Select a Resolution Code before resolving this ticket.'
-            );
-
-            return;
+            reject('Select a Resolution Code before resolving this ticket.')
+            return
         }
     }
 
-    /* =========================================================
-       REOPEN VALIDATION
-       ========================================================= */
-
-    if (
-        !isInsert &&
-        previousState === '5' &&
-        state === '3' &&
-        !current.getValue('reopen_reason')
-    ) {
-
-        reject(
-            'Enter a Reopen Reason explaining why this ticket is not resolved before reopening it.'
-        );
-
-        return;
+    /* ---------------------------------------------------------------
+     * Reopening a resolved ticket needs a reason
+     * ------------------------------------------------------------- */
+    if (!isInsert && previousState === '5' && state === '3' && !current.getValue('reopen_reason')) {
+        reject('Enter a Reopen Reason explaining why this ticket is not resolved before reopening it.')
+        return
     }
 
-    /* =========================================================
-       CLOSURE VALIDATION
-       ========================================================= */
-
+    /* ---------------------------------------------------------------
+     * Closing: only from Resolved, and only for manager / admin
+     * ------------------------------------------------------------- */
     if (stateChanged && state === '6') {
-
         if (isInsert || previousState !== '5') {
-
-            reject(
-                'A ticket can only be closed from the Resolved state. Resolve it first, then close it.'
-            );
-
-            return;
+            reject('A ticket can only be closed from the Resolved state. Resolve it first, then close it.')
+            return
         }
-
         if (!isPrivileged) {
-
-            reject(
-                'Only a manager can close a resolved ticket.'
-            );
-
-            return;
+            reject('Only a manager can close a resolved ticket.')
+            return
         }
     }
-
-})(current, previous);]]></script>
+})(current, previous)
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-11-18 18:01:24</sys_created_on>

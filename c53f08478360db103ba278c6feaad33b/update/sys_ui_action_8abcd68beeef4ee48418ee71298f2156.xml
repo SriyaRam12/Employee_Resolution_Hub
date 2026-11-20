@@ -3,11 +3,9 @@
         <action_name>esr_request_reopen</action_name>
         <active>true</active>
         <client>false</client>
-        <client_script_v2><![CDATA[function onClick(g_form) {
-
-}]]></client_script_v2>
+        <client_script_v2/>
         <comments/>
-        <condition>current.state == 5 || current.state == 6 &amp;&amp; current.requester == gs.getUserID()</condition>
+        <condition>current.state == 5 &amp;&amp; current.requester == gs.getUserID()</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_icon/>
@@ -19,7 +17,7 @@
         <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint>Ask support to reopen this ticket. A Reopen Reason is required.</hint>
         <isolate_script>false</isolate_script>
-        <list_action>true</list_action>
+        <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
         <list_button_icon/>
@@ -32,35 +30,16 @@
         <name>Request Reopen</name>
         <onclick/>
         <order>400</order>
-        <script><![CDATA[(function() {
-
-    // Reopen only Resolved or Closed tickets
-    if (current.state != 5 && current.state != 6) {
-        gs.addErrorMessage('Only Resolved or Closed tickets can be reopened.');
-        action.setRedirectURL(current);
-        return;
-    }
-
-    // Reopen reason is mandatory
-    if (current.reopen_reason.nil()) {
-        gs.addErrorMessage('Enter a Reopen Reason explaining why this ticket is not resolved.');
-        action.setRedirectURL(current);
-        return;
-    }
-
-    // Move the ticket back to In Progress
-    current.setValue('state', 3);
-    current.setValue('active', true);
-
-    // Save the record
-    current.update();
-
-    gs.addInfoMessage('Ticket successfully reopened and moved to In Progress.');
-
+        <script><![CDATA[if (current.reopen_reason.nil()) {
+    gs.addErrorMessage('Enter a Reopen Reason explaining why this ticket is not resolved.');
     action.setRedirectURL(current);
-
-})();]]></script>
-        <show_form_icon_only>true</show_form_icon_only>
+} else {
+    current.state = 3;
+    current.update();
+    gs.addInfoMessage('Reopen requested. The ticket is back In Progress.');
+    action.setRedirectURL(current);
+}]]></script>
+        <show_form_icon_only>false</show_form_icon_only>
         <show_insert>true</show_insert>
         <show_list_icon_only>false</show_list_icon_only>
         <show_multiple_update>false</show_multiple_update>
