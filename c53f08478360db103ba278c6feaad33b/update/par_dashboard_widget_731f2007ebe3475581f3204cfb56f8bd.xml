@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">a7ab4c32931449c586e330768e14ac29</canvas>
+        <component display_value="List">7ff373544303121093711347efb8f23c</component>
+        <component_props>{"headerTitle":"Tickets Awaiting Action","showHeader":true,"showBorder":true,"table":"x_412993_employe_1_ticket","columns":"number,short_description,category,priority,state,assignment_group,assigned_to,opened_at","limit":30,"showLinks":true,"showViewAll":true,"showColumnSorting":true,"wrapCellContent":false,"dataSources":[{"sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"active=true^stateIN2,3,4^ORDERBYpriority","label":"Employee Issue Ticket","id":"ds_awaiting","dataCategories":["trend","group","simple"]}],"metrics":[{"dataSource":"ds_awaiting","id":"m_awaiting","aggregateFunction":"COUNT","axisId":"primary","label":"Tickets","numberFormat":{"customFormat":false}}]}</component_props>
+        <h>16</h>
+        <name>Tickets Awaiting Action</name>
+        <required_translations>[{"comment":"","message":"Tickets","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.731f2007ebe3475581f3204cfb56f8bd"},{"comment":"","message":"Tickets Awaiting Action","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.731f2007ebe3475581f3204cfb56f8bd"},{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.731f2007ebe3475581f3204cfb56f8bd"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>731f2007ebe3475581f3204cfb56f8bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Tickets Awaiting Action</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_widget_731f2007ebe3475581f3204cfb56f8bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:17</sys_updated_on>
+        <visualization/>
+        <w>48</w>
+        <widget_props/>
+        <x>0</x>
+        <y>48</y>
+    </par_dashboard_widget>
+</record_update>

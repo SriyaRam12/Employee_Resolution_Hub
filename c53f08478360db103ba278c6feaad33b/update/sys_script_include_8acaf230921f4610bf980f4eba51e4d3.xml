@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_412993_employe_1.EsrTicketUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Shared ticket helpers: assigned_to reference qualifier, category -&gt; support group routing, impact/urgency priority matrix and elapsed-hours maths.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>EsrTicketUtils</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[/**
+ * EsrTicketUtils - shared server-side helpers for the Employee Service and
+ * Resolution Hub ticket (x_412993_employe_1_ticket).
+ *
+ * Consumed by:
+ *   - the `assigned_to` dynamic reference qualifier on the ticket table
+ *     (javascript:new x_412993_employe_1.EsrTicketUtils().getAssignedToQualifier(current))
+ *   - the "ESR - Calculate priority" business rule
+ *   - the "ESR - Auto assign support group" business rule
+ *   - the "ESR - Manage lifecycle timestamps" business rule
+ *
+ * Every method is defensive: a null / empty / unexpected argument returns a
+ * safe fallback rather than throwing, because reference qualifiers and before
+ * rules must never break a form load or a save.
+ *
+ * NOTE: Script Include class files must NOT import Glide APIs - GlideRecord,
+ * GlideDateTime and gs are auto-available in this execution context.
+ */
+var EsrTicketUtils = Class.create()
+
+EsrTicketUtils.prototype = {
+    initialize: function () {},
+
+    /** Fallback qualifier - every active user. Never return an empty string. */
+    ALL_ACTIVE_USERS: 'active=true',
+
+    /** Catch-all group used for 'other' and for anything unmatched. */
+    DEFAULT_GROUP_NAME: 'Service Desk',
+
+    /**
+     * Sentinel sys_id that matches no record. Used when a group list would
+     * otherwise be empty, so an `IN` clause excludes everything instead of
+     * degrading into "no restriction".
+     */
+    NO_MATCH_SYS_ID: 'ffffffffffffffffffffffffffffffff',
+
+    /** category value -> sys_user_group.name */
+    CATEGORY_GROUP_NAMES: {
+        hardware: 'Hardware Support',
+        software: 'Application Support',
+        network: 'Network Support',
+        access: 'Identity and Access Support',
+        other: 'Service Desk',
+    },
+
+    /** impact -> urgency -> priority */
+    PRIORITY_MATRIX: {
+        '1': { '1': '1', '2': '2', '3': '3' },
+        '2': { '1': '2', '2': '3', '3': '4' },
+        '3': { '1': '3', '2': '4', '3': '5' },
+    },
+
+    DEFAULT_PRIORITY: '4',
+
+    /* =====================================================================
+     * getAssignedToQualifier(current)
+     *
+     * Encoded query for the ticket's `assigned_to` picker.
+     *   - assignment_group populated -> active members of that group
+     *   - group empty, group has no members, or anything unexpected
+     *     -> every active user
+     * ================================================================== */
+    getAssignedToQualifier: function (current) {
+        var groupId = this._readAssignmentGroup(current)
+        if (!groupId) {
+            return this.ALL_ACTIVE_USERS
+        }
+
+        var memberIds = []
+        try {
+            var member = new GlideRecord('sys_user_grmember')
+            member.addQuery('group', groupId)
+            member.query()
+            while (member.next()) {
+                var userId = member.getValue('user')
+                if (userId && memberIds.indexOf(userId) === -1) {
+                    memberIds.push(userId)
+                }
+            }
+        } catch (e) {
+            gs.warn('EsrTicketUtils.getAssignedToQualifier: ' + e)
+            return this.ALL_ACTIVE_USERS
+        }
+
+        if (memberIds.length === 0) {
+            return this.ALL_ACTIVE_USERS
+        }
+
+        return 'active=true^sys_idIN' + memberIds.join(',')
+    },
+
+    /* =====================================================================
+     * getGroupForCategory(category)
+     *
+     * sys_id of the support group that owns a category. The group is looked
+     * up by name at runtime so the routing survives any re-install and never
+     * hard-codes a sys_id.
+     * ================================================================== */
+    getGroupForCategory: function (category) {
+        var key = this._normaliseString(category).toLowerCase()
+        var groupName = this.DEFAULT_GROUP_NAME
+
+        if (key && Object.prototype.hasOwnProperty.call(this.CATEGORY_GROUP_NAMES, key)) {
+            groupName = this.CATEGORY_GROUP_NAMES[key]
+        }
+
+        var groupId = this._findGroupIdByName(groupName)
+        if (!groupId && groupName !== this.DEFAULT_GROUP_NAME) {
+            groupId = this._findGroupIdByName(this.DEFAULT_GROUP_NAME)
+        }
+
+        return groupId
+    },
+
+    /* =====================================================================
+     * getUnassignedQueueGroupIds()
+     *
+     * Comma separated sys_user_group sys_ids for the "Unassigned Tickets"
+     * queue. Consumed as a `javascript:` value on the right hand side of an
+     * `assignment_groupIN` clause by the dashboard widgets, the report and the
+     * navigation module, so all three stay in agreement.
+     *
+     *   support staff  -> only the groups the caller actually belongs to
+     *   manager / admin -> every group that currently holds unassigned work,
+     *                      which covers all queues they oversee while keeping
+     *                      the IN clause bounded
+     *
+     * Returns NO_MATCH_SYS_ID when the caller belongs to no group. Returning
+     * an empty string instead would leave a dangling `assignment_groupIN` that
+     * matches every group - the exact leak this queue must not have.
+     *
+     * This is a convenience filter, not the security boundary: the
+     * record-level read ACL independently restricts support staff to tickets
+     * assigned to them, raised by them, or in a group they are a member of.
+     * ================================================================== */
+    getUnassignedQueueGroupIds: function () {
+        var ids = []
+
+        try {
+            if (gs.hasRole('x_412993_employe_1.manager') || gs.hasRole('admin')) {
+                var agg = new GlideAggregate('x_412993_employe_1_ticket')
+                agg.addQuery('active', true)
+                agg.addNullQuery('assigned_to')
+                agg.addNotNullQuery('assignment_group')
+                agg.groupBy('assignment_group')
+                agg.query()
+                while (agg.next()) {
+                    var queueId = this._normaliseString(agg.getValue('assignment_group'))
+                    if (queueId && ids.indexOf(queueId) === -1) {
+                        ids.push(queueId)
+                    }
+                }
+            } else {
+                var member = new GlideRecord('sys_user_grmember')
+                member.addQuery('user', gs.getUserID())
+                member.query()
+                while (member.next()) {
+                    var groupId = this._normaliseString(member.getValue('group'))
+                    if (groupId && ids.indexOf(groupId) === -1) {
+                        ids.push(groupId)
+                    }
+                }
+            }
+        } catch (e) {
+            gs.warn('EsrTicketUtils.getUnassignedQueueGroupIds: ' + e)
+            return this.NO_MATCH_SYS_ID
+        }
+
+        return ids.length ? ids.join(',') : this.NO_MATCH_SYS_ID
+    },
+
+    /* =====================================================================
+     * canClaimTicket(current)
+     *
+     * True when the caller may take personal ownership of a ticket: it is
+     * unclaimed, still New or Assigned, routed to a group, and the caller is
+     * either a member of that group or a manager.
+     *
+     * Shared by the "Assign to Me" UI action condition and its script so the
+     * button cannot be bypassed by posting the form directly.
+     * ================================================================== */
+    canClaimTicket: function (current) {
+        if (!current) {
+            return false
+        }
+
+        try {
+            if (this._normaliseString(current.getValue('assigned_to'))) {
+                return false
+            }
+
+            var state = this._normaliseString(current.getValue('state'))
+            if (state !== '1' && state !== '2') {
+                return false
+            }
+
+            var groupId = this._readAssignmentGroup(current)
+            if (!groupId) {
+                return false
+            }
+
+            if (gs.hasRole('x_412993_employe_1.manager') || gs.hasRole('admin')) {
+                return true
+            }
+
+            return gs.getUser().isMemberOf(groupId)
+        } catch (e) {
+            gs.warn('EsrTicketUtils.canClaimTicket: ' + e)
+            return false
+        }
+    },
+
+    /* =====================================================================
+     * calculatePriority(impact, urgency)
+     *
+     * Priority is always derived from the impact / urgency matrix.
+     * Anything outside 1-3 falls back to '4' (Low).
+     * ================================================================== */
+    calculatePriority: function (impact, urgency) {
+        var impactLevel = this._normaliseLevel(impact)
+        var urgencyLevel = this._normaliseLevel(urgency)
+
+        if (!impactLevel || !urgencyLevel) {
+            return this.DEFAULT_PRIORITY
+        }
+
+        var row = this.PRIORITY_MATRIX[impactLevel]
+        if (!row || !row[urgencyLevel]) {
+            return this.DEFAULT_PRIORITY
+        }
+
+        return row[urgencyLevel]
+    },
+
+    /* =====================================================================
+     * hoursBetween(startGlideDateTime, endGlideDateTime)
+     *
+     * Elapsed hours between two date/times, rounded to 2 decimals.
+     * Accepts GlideDateTime objects, GlideElement values or strings.
+     * Returns 0 when either side is missing or unparseable.
+     * ================================================================== */
+    hoursBetween: function (startGlideDateTime, endGlideDateTime) {
+        var start = this._toGlideDateTime(startGlideDateTime)
+        var end = this._toGlideDateTime(endGlideDateTime)
+
+        if (!start || !end) {
+            return 0
+        }
+
+        var elapsedMs = end.getNumericValue() - start.getNumericValue()
+        if (isNaN(elapsedMs)) {
+            return 0
+        }
+
+        return Math.round((elapsedMs / 3600000) * 100) / 100
+    },
+
+    /* =====================================================================
+     * Internal helpers
+     * ================================================================== */
+
+    _normaliseString: function (value) {
+        if (value === null || value === undefined) {
+            return ''
+        }
+        var text = '' + value
+        if (text === 'null' || text === 'undefined') {
+            return ''
+        }
+        return text.trim()
+    },
+
+    _normaliseLevel: function (value) {
+        var text = this._normaliseString(value)
+        if (text === '1' || text === '2' || text === '3') {
+            return text
+        }
+        return ''
+    },
+
+    _readAssignmentGroup: function (current) {
+        if (!current) {
+            return ''
+        }
+        try {
+            if (typeof current.getValue === 'function') {
+                return this._normaliseString(current.getValue('assignment_group'))
+            }
+            return this._normaliseString(current.assignment_group)
+        } catch (e) {
+            return ''
+        }
+    },
+
+    _findGroupIdByName: function (groupName) {
+        var name = this._normaliseString(groupName)
+        if (!name) {
+            return ''
+        }
+        try {
+            var group = new GlideRecord('sys_user_group')
+            group.addQuery('name', name)
+            group.setLimit(1)
+            group.query()
+            if (group.next()) {
+                return group.getUniqueValue()
+            }
+        } catch (e) {
+            gs.warn('EsrTicketUtils._findGroupIdByName: ' + e)
+        }
+        return ''
+    },
+
+    _toGlideDateTime: function (value) {
+        if (value === null || value === undefined) {
+            return null
+        }
+        if (typeof value === 'object' && typeof value.getNumericValue === 'function') {
+            return value
+        }
+        var text = this._normaliseString(value)
+        if (!text) {
+            return null
+        }
+        var gdt = new GlideDateTime()
+        gdt.setValue(text)
+        if (!gdt.isValid()) {
+            return null
+        }
+        return gdt
+    },
+
+    type: 'EsrTicketUtils',
+}
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:24</sys_created_on>
+        <sys_id>8acaf230921f4610bf980f4eba51e4d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EsrTicketUtils</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_script_include_8acaf230921f4610bf980f4eba51e4d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:24</sys_updated_on>
+    </sys_script_include>
+</record_update>
