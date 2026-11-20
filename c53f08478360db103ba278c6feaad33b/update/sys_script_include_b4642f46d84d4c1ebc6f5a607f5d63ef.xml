@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_412993_employe_1.EsrSubcategoryUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Category to Subcategory relationship helpers: builds the Subcategory reference qualifier, counts active subcategories per category and performs the authoritative pairing validation used by the server-side business rule.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>EsrSubcategoryUtils</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var EsrSubcategoryUtils = Class.create()
+
+EsrSubcategoryUtils.prototype = {
+    initialize: function () {},
+
+    SUBCAT_TABLE: 'x_412993_employe_1_subcat',
+
+    /**
+     * Normalise a value that may arrive as a GlideElement, null or undefined
+     * into a trimmed primitive string.
+     */
+    _str: function (value) {
+        if (value === null || value === undefined) {
+            return ''
+        }
+        return ('' + value).trim()
+    },
+
+    /**
+     * Builds the reference qualifier for the ticket's Subcategory field.
+     *
+     * Returns an encoded query that:
+     *   - matches NOTHING when no category has been chosen yet, so the picker
+     *     cannot offer a subcategory that belongs to some other category, and
+     *   - otherwise restricts to active subcategories of that exact category.
+     *
+     * Never returns an empty string: an empty qualifier would silently show
+     * every subcategory in the table, which is the failure mode this whole
+     * feature exists to prevent.
+     */
+    getQualifier: function (current) {
+        var category = ''
+
+        if (current) {
+            try {
+                category = this._str(current.getValue('category'))
+            } catch (e) {
+                category = ''
+            }
+        }
+
+        if (!category) {
+            // Deliberately unsatisfiable: no category chosen means no valid
+            // subcategory exists yet.
+            return 'sys_idISEMPTY'
+        }
+
+        return 'active=true^category=' + category
+    },
+
+    /**
+     * Number of active subcategories configured for a category.
+     * Drives the "no subcategories available" message on the form.
+     */
+    countForCategory: function (category) {
+        category = this._str(category)
+        if (!category) {
+            return 0
+        }
+
+        var count = 0
+        try {
+            var agg = new GlideAggregate(this.SUBCAT_TABLE)
+            agg.addQuery('active', true)
+            agg.addQuery('category', category)
+            agg.addAggregate('COUNT')
+            agg.query()
+            if (agg.next()) {
+                count = parseInt(agg.getAggregate('COUNT'), 10)
+            }
+        } catch (e) {
+            count = 0
+        }
+
+        return isNaN(count) ? 0 : count
+    },
+
+    /**
+     * Reads a subcategory record and reports its category, active flag and
+     * display name. Returns null when the sys_id does not resolve.
+     */
+    getSubcategoryInfo: function (subcategoryId) {
+        subcategoryId = this._str(subcategoryId)
+        if (!subcategoryId) {
+            return null
+        }
+
+        var gr = new GlideRecord(this.SUBCAT_TABLE)
+        if (!gr.get(subcategoryId)) {
+            return null
+        }
+
+        return {
+            sys_id: gr.getUniqueValue(),
+            name: this._str(gr.getValue('name')),
+            category: this._str(gr.getValue('category')),
+            active: gr.getValue('active') == '1',
+        }
+    },
+
+    /**
+     * Authoritative pairing check used by the server-side business rule and by
+     * the AJAX processor.
+     *
+     * An empty subcategory is valid: the field is optional on the ticket.
+     */
+    validatePair: function (category, subcategoryId) {
+        category = this._str(category)
+        subcategoryId = this._str(subcategoryId)
+
+        if (!subcategoryId) {
+            return { valid: true, reason: 'empty' }
+        }
+
+        if (!category) {
+            return {
+                valid: false,
+                reason: 'no_category',
+                message: 'Select a Category before choosing a Subcategory.',
+            }
+        }
+
+        var info = this.getSubcategoryInfo(subcategoryId)
+
+        if (!info) {
+            return {
+                valid: false,
+                reason: 'not_found',
+                message: 'The selected Subcategory no longer exists. Choose another Subcategory.',
+            }
+        }
+
+        if (!info.active) {
+            return {
+                valid: false,
+                reason: 'inactive',
+                subcategoryName: info.name,
+                message:
+                    'Subcategory "' +
+                    info.name +
+                    '" is no longer active. Choose an active Subcategory.',
+            }
+        }
+
+        if (info.category !== category) {
+            return {
+                valid: false,
+                reason: 'mismatch',
+                subcategoryName: info.name,
+                subcategoryCategory: info.category,
+                message:
+                    'Subcategory "' +
+                    info.name +
+                    '" belongs to the ' +
+                    this.getCategoryLabel(info.category) +
+                    ' category, not ' +
+                    this.getCategoryLabel(category) +
+                    '. Choose a Subcategory that belongs to the selected Category.',
+            }
+        }
+
+        return { valid: true, reason: 'match', subcategoryName: info.name }
+    },
+
+    /**
+     * Human-readable label for a category value, for use in error messages.
+     * Falls back to the raw value so an unexpected value is still legible.
+     */
+    getCategoryLabel: function (category) {
+        category = this._str(category)
+        var labels = {
+            hardware: 'Hardware',
+            software: 'Software',
+            network: 'Network',
+            access: 'Access',
+            other: 'Other',
+        }
+        return labels[category] || category || '(none)'
+    },
+
+    type: 'EsrSubcategoryUtils',
+}
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 03:27:09</sys_created_on>
+        <sys_id>b4642f46d84d4c1ebc6f5a607f5d63ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EsrSubcategoryUtils</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_script_include_b4642f46d84d4c1ebc6f5a607f5d63ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 03:27:09</sys_updated_on>
+    </sys_script_include>
+</record_update>

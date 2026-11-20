@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_412993_employe_1_ticket</collection>
+        <condition>!current.subcategory.nil()</condition>
+        <description>Rejects any insert or update where the selected Subcategory does not belong to the selected Category, is inactive, or no longer exists. Subcategory is optional, so an empty Subcategory always passes.</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ESR - Validate category and subcategory</name>
+        <order>130</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[/**
+ * ESR - Validate category and subcategory
+ *
+ * Authoritative server-side guard on the Category/Subcategory relationship.
+ * Runs for every insert and update regardless of origin: the platform form,
+ * the Raise a Ticket view, list inline edit, the REST Table API, the employee
+ * homepage, or any script. Client-side filtering is a convenience only; this
+ * is the rule that actually protects data integrity.
+ *
+ * Subcategory is optional, so an empty subcategory always passes.
+ */
+;(function executeRule(current, previous /*null when async*/) {
+    var category = current.getValue('category')
+    var subcategory = current.getValue('subcategory')
+
+    // Nothing to check when no subcategory has been chosen.
+    if (!subcategory) {
+        return
+    }
+
+    var utils = new x_412993_employe_1.EsrSubcategoryUtils()
+    var result = utils.validatePair(category, subcategory)
+
+    if (result.valid) {
+        return
+    }
+
+    gs.addErrorMessage(result.message)
+    current.setAbortAction(true)
+})(current, previous)
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 03:27:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f3b47304bd2c4d3888622b601d8d2f67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESR - Validate category and subcategory</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_script_f3b47304bd2c4d3888622b601d8d2f67</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 03:27:08</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f3b47304bd2c4d3888622b601d8d2f67"/>
+</record_update>
