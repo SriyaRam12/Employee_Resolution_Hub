@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_412993_employe_1_ticket</collection>
+        <condition>current.operation() == 'insert' || current.category.changes() || current.assignment_group.changes() || current.assigned_to.changes()</condition>
+        <description>Routes the ticket to the support group that owns its category, re-routes it when the category changes while it is still unassigned to a person, and advances New -&gt; Assigned -&gt; In Progress as ownership is established.</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ESR - Auto assign support group</name>
+        <order>200</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[/**
+ * ESR - Auto assign support group   (before / insert + update / order 200)
+ *
+ * Routes a ticket to the support group that owns its category, re-routes it
+ * while nobody has personally picked it up, and records when a named agent
+ * takes ownership.
+ *
+ *   assignment_group empty + category set      -> derive group from category
+ *   category changed, no assignee, state 1|2   -> re-route to the new group
+ *   assigned_to newly set while state 1 (New)  -> state 2 (Assigned)
+ *
+ * DELIBERATELY NOT DONE HERE:
+ *
+ *   - Group routing does NOT advance the state. A ticket that has merely been
+ *     routed to a queue is still New: no human has looked at it yet. This rule
+ *     previously bumped New -> Assigned as soon as a group was derived, which
+ *     happens during the insert itself, so a brand new ticket could never be
+ *     observed in the New state.
+ *
+ *   - Nothing here sets In Progress. Moving to In Progress means an agent has
+ *     explicitly started work, which is what the "Accept" UI action is for.
+ *     Deriving it automatically would report work as started before anybody
+ *     had touched the ticket.
+ *
+ * This is a before rule, so field writes persist with the save in flight -
+ * current.update() is deliberately never called.
+ */
+;(function autoAssignSupportGroup(current, previous) {
+    var utils = new x_412993_employe_1.EsrTicketUtils()
+
+    var isInsert = current.operation() === 'insert'
+    var category = current.getValue('category')
+    var assignedTo = current.getValue('assigned_to')
+    var group = current.getValue('assignment_group')
+
+    /* ---------------------------------------------------------------
+     * 1. Unassigned group -> derive it from the category
+     * ------------------------------------------------------------- */
+    if (!group && category) {
+        var derivedGroup = utils.getGroupForCategory(category)
+        if (derivedGroup) {
+            current.setValue('assignment_group', derivedGroup)
+            group = derivedGroup
+        }
+    }
+
+    /* ---------------------------------------------------------------
+     * 2. Category re-categorised on an existing ticket that nobody has
+     *    personally picked up yet, and which is still New / Assigned
+     *    -> re-route to the new category's group
+     * ------------------------------------------------------------- */
+    if (!isInsert && category && !assignedTo && current.category.changes()) {
+        var stateNow = current.getValue('state')
+        if (stateNow === '1' || stateNow === '2') {
+            var rerouted = utils.getGroupForCategory(category)
+            if (rerouted && rerouted !== group) {
+                current.setValue('assignment_group', rerouted)
+                group = rerouted
+            }
+        }
+    }
+
+    /* ---------------------------------------------------------------
+     * 3. A named agent now owns the ticket -> New becomes Assigned
+     *
+     *    Only promotes out of New. A ticket already In Progress, On Hold,
+     *    Resolved or Closed is left alone, so a reassignment never drags
+     *    the lifecycle backwards.
+     * ------------------------------------------------------------- */
+    var newlyAssigned = !!assignedTo && (isInsert || current.assigned_to.changes())
+    if (newlyAssigned && current.getValue('state') === '1') {
+        current.setValue('state', '2')
+    }
+})(current, previous)
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f532ac959ddc41cf9a1df8acda6197b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESR - Auto assign support group</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_script_f532ac959ddc41cf9a1df8acda6197b5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:24</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f532ac959ddc41cf9a1df8acda6197b5"/>
+</record_update>
