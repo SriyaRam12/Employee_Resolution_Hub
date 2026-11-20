@@ -21,10 +21,10 @@
         <include_trends>true</include_trends>
         <include_widget_notification>true</include_widget_notification>
         <last_deactivated_on/>
-        <last_updated_on>2026-11-19 18:43:19</last_updated_on>
+        <last_updated_on>2026-11-20 03:40:04</last_updated_on>
         <po_project_id_list>[]</po_project_id_list>
         <refresh_information>false</refresh_information>
-        <refresh_interval>-1</refresh_interval>
+        <refresh_interval/>
         <requested_by_user/>
         <schedule_repetition>false</schedule_repetition>
         <show_ai_insights_panel>false</show_ai_insights_panel>
@@ -36,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f4caed9783e45f103ba278c6feaad3c2</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
@@ -44,7 +44,7 @@
         <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
         <sys_update_name>par_dashboard_user_metadata_f4caed9783e45f103ba278c6feaad3c2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-11-20 00:08:06</sys_updated_on>
+        <sys_updated_on>2026-11-20 03:40:04</sys_updated_on>
         <updated_by_user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</updated_by_user>
         <use_custom_tab_colors>false</use_custom_tab_colors>
         <widgets_margin>$now-global-space--sm</widgets_margin>
