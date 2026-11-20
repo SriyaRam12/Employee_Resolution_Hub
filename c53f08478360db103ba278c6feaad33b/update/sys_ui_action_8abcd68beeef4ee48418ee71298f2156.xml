@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>esr_request_reopen</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.state == 5 || current.state == 6 &amp;&amp; current.requester == gs.getUserID()</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_icon/>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style>destructive</form_style>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint>Ask support to reopen this ticket. A Reopen Reason is required.</hint>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_button_icon/>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Request Reopen</name>
+        <onclick/>
+        <order>400</order>
+        <script><![CDATA[(function() {
+
+    // Reopen only Resolved or Closed tickets
+    if (current.state != 5 && current.state != 6) {
+        gs.addErrorMessage('Only Resolved or Closed tickets can be reopened.');
+        action.setRedirectURL(current);
+        return;
+    }
+
+    // Reopen reason is mandatory
+    if (current.reopen_reason.nil()) {
+        gs.addErrorMessage('Enter a Reopen Reason explaining why this ticket is not resolved.');
+        action.setRedirectURL(current);
+        return;
+    }
+
+    // Move the ticket back to In Progress
+    current.setValue('state', 3);
+    current.setValue('active', true);
+
+    // Save the record
+    current.update();
+
+    gs.addInfoMessage('Ticket successfully reopened and moved to In Progress.');
+
+    action.setRedirectURL(current);
+
+})();]]></script>
+        <show_form_icon_only>true</show_form_icon_only>
+        <show_insert>true</show_insert>
+        <show_list_icon_only>false</show_list_icon_only>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8abcd68beeef4ee48418ee71298f2156</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Request Reopen</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_ui_action_8abcd68beeef4ee48418ee71298f2156</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 12:25:29</sys_updated_on>
+        <table>x_412993_employe_1_ticket</table>
+        <ui11_compatible>false</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
