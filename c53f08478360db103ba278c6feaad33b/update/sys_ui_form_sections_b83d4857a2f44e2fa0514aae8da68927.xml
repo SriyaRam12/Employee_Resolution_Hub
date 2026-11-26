@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="b83d4857a2f44e2fa0514aae8da68927" sys_domain="global" table="x_412993_employe_1_ticket" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0d05bcdc7d7e46e9bfb06dcb7df26fb7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="48cf787cb8d4487bb53e228b3f884955">b83d4857a2f44e2fa0514aae8da68927</sys_ui_form>
+            <sys_ui_section caption="Raise a Ticket" display_value="Raise a Ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="48cf787cb8d4487bb53e228b3f884955">09438268436b440e96495036fec5b8ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_412993_employe_1_ticket</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-18 18:01:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b83d4857a2f44e2fa0514aae8da68927</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_412993_employe_1_ticket</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+            <sys_update_name>sys_ui_form_sections_b83d4857a2f44e2fa0514aae8da68927</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-18 18:01:31</sys_updated_on>
+            <sys_user/>
+            <view display_value="Raise a Ticket" name="esr_new">48cf787cb8d4487bb53e228b3f884955</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

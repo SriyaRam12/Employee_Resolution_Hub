@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_412993_employe_1_ticket</collection>
+        <condition/>
+        <description>Queues exactly one lifecycle event per meaningful change (submitted, assigned, resolved, reopened, closed, updated) for the email notification layer to consume.</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ESR - Fire lifecycle events</name>
+        <order>1000</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[/**
+ * ESR - Fire lifecycle events   (after / insert + update / order 1000)
+ *
+ * The notification seam. Exactly ONE event is queued per meaningful change -
+ * the first matching branch wins and returns - so a single save never produces
+ * duplicate emails.
+ *
+ *   insert                                    -> ticket.submitted
+ *   assignment_group / assigned_to changed    -> ticket.assigned
+ *   state -> 5                                -> ticket.resolved
+ *   state 5 -> 3                              -> ticket.reopened
+ *   state -> 6                                -> ticket.closed
+ *   work_notes / comments changed, or any
+ *   other state change                        -> ticket.updated
+ *
+ * This is an after rule: `current` is never modified here.
+ */
+;(function fireTicketLifecycleEvents(current, previous) {
+    var ticketNumber = current.getValue('number') || ''
+    var requester = current.getValue('requester') || ''
+    var assignedTo = current.getValue('assigned_to') || ''
+    var assignmentGroup = current.getValue('assignment_group') || ''
+
+    /* ---------------------------------------------------------------
+     * Insert - a new ticket was submitted
+     * ------------------------------------------------------------- */
+    if (current.operation() === 'insert') {
+        gs.eventQueue('x_412993_employe_1.ticket.submitted', current, requester, ticketNumber)
+        return
+    }
+
+    if (!previous) {
+        return
+    }
+
+    var state = current.getValue('state')
+    var previousState = previous.getValue('state')
+    var stateChanged = state !== previousState
+
+    /* ---------------------------------------------------------------
+     * Assignment changed - group and/or person
+     * ------------------------------------------------------------- */
+    var groupChanged = assignmentGroup !== (previous.getValue('assignment_group') || '')
+    var assigneeChanged = assignedTo !== (previous.getValue('assigned_to') || '')
+    if (groupChanged || assigneeChanged) {
+        gs.eventQueue('x_412993_employe_1.ticket.assigned', current, assignedTo, assignmentGroup)
+        return
+    }
+
+    /* ---------------------------------------------------------------
+     * Resolved
+     * ------------------------------------------------------------- */
+    if (stateChanged && state === '5') {
+        gs.eventQueue(
+            'x_412993_employe_1.ticket.resolved',
+            current,
+            requester,
+            current.getDisplayValue('resolution_code') || ticketNumber
+        )
+        return
+    }
+
+    /* ---------------------------------------------------------------
+     * Reopened (Resolved -> In Progress)
+     * ------------------------------------------------------------- */
+    if (stateChanged && previousState === '5' && state === '3') {
+        gs.eventQueue('x_412993_employe_1.ticket.reopened', current, assignedTo, assignmentGroup)
+        return
+    }
+
+    /* ---------------------------------------------------------------
+     * Closed
+     * ------------------------------------------------------------- */
+    if (stateChanged && state === '6') {
+        gs.eventQueue('x_412993_employe_1.ticket.closed', current, requester, ticketNumber)
+        return
+    }
+
+    /* ---------------------------------------------------------------
+     * Anything else worth telling the requester about: a new work note,
+     * a new comment, or a state change not covered above
+     * ------------------------------------------------------------- */
+    var notesAdded = false
+    try {
+        notesAdded = current.work_notes.changes() || current.comments.changes()
+    } catch (e) {
+        notesAdded = false
+    }
+
+    if (notesAdded || stateChanged) {
+        gs.eventQueue('x_412993_employe_1.ticket.updated', current, requester, ticketNumber)
+    }
+})(current, previous)
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>51bef9c0cd9340e1b6488194bc6b60d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESR - Fire lifecycle events</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_script_51bef9c0cd9340e1b6488194bc6b60d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:24</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=51bef9c0cd9340e1b6488194bc6b60d9"/>
+</record_update>

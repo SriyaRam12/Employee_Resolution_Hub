@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="c2c5bd3ac6fa43e282be1dce02e955ee" extends="task" label="Employee Issue Ticket" name="x_412993_employe_1_ticket" text_index="true" type="collection">
+        <element label="Resolved By" name="resolved_by" read_only="true" read_only_option="instance_configured" reference="sys_user" reference_cascade_rule="none" type="reference"/>
+        <element label="Reopened At" name="reopened_at" read_only="true" read_only_option="instance_configured" type="glide_date_time"/>
+        <element default="0" label="Reopen Count" name="reopen_count" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element label="Resolution Time (hours)" name="resolution_hours" read_only="true" read_only_option="instance_configured" type="decimal"/>
+        <element label="Resolved At" name="resolved_at" read_only="true" read_only_option="instance_configured" type="glide_date_time"/>
+        <element attributes="ref_qual_elements=category,ref_sequence=order^name" label="Subcategory" name="subcategory" reference="x_412993_employe_1_subcat" reference_cascade_rule="none" reference_qual="javascript:'active=true^category=' + current.getValue('category')" type="reference" use_reference_qualifier="advanced"/>
+        <element label="Resolution Notes" max_length="4000" name="resolution_notes" type="multi_two_lines"/>
+        <element choice="1" label="Resolution Code" name="resolution_code" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Solved (permanently)" sequence="1" value="solved_permanently"/>
+                <element inactive_on_update="false" label="Solved remotely" sequence="3" value="solved_remotely"/>
+                <element inactive_on_update="false" label="Duplicate ticket" sequence="5" value="duplicate"/>
+                <element inactive_on_update="false" label="Solved (work around)" sequence="2" value="solved_workaround"/>
+                <element inactive_on_update="false" label="No longer required" sequence="6" value="no_longer_required"/>
+                <element inactive_on_update="false" label="Not solved (explained to requester)" sequence="4" value="not_solved_explained"/>
+            </choice>
+        </element>
+        <element label="Closure Notes" max_length="4000" name="closure_notes" type="multi_two_lines"/>
+        <element label="Reopen Reason" max_length="4000" name="reopen_reason" type="multi_two_lines"/>
+        <element choice="1" label="On Hold Reason" name="on_hold_reason" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Awaiting vendor or third party" sequence="2" value="awaiting_vendor"/>
+                <element inactive_on_update="false" label="Awaiting information from requester" sequence="1" value="awaiting_requester"/>
+                <element inactive_on_update="false" label="Awaiting hardware or parts" sequence="4" value="awaiting_parts"/>
+                <element inactive_on_update="false" label="Awaiting approval" sequence="5" value="awaiting_approval"/>
+                <element inactive_on_update="false" label="Awaiting a scheduled change" sequence="3" value="awaiting_change"/>
+            </choice>
+        </element>
+        <element attributes="ref_auto_completer=AJAXTableCompleter,ref_ac_columns=email;department,ref_ac_columns_search=true" default="javascript:gs.getUserID()" label="Requester" mandatory="true" name="requester" reference="sys_user" reference_cascade_rule="none" reference_qual="active=true" type="reference"/>
+        <element label="On Hold Notes" max_length="4000" name="hold_notes" type="multi_two_lines"/>
+        <element choice="1" label="Category" mandatory="true" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Software" sequence="2" value="software"/>
+                <element inactive_on_update="false" label="Access" sequence="4" value="access"/>
+                <element inactive_on_update="false" label="Network" sequence="3" value="network"/>
+                <element inactive_on_update="false" label="Other" sequence="5" value="other"/>
+                <element inactive_on_update="false" label="Hardware" sequence="1" value="hardware"/>
+            </choice>
+        </element>
+    </element>
+</database>

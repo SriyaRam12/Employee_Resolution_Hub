@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">038339efc8804d44a6dc817461e1b0cc</canvas>
+        <component display_value="Vertical bar">23051643b7e03010097cb81cde11a910</component>
+        <component_props>{"headerTitle":"Support Team Performance (tickets resolved per agent)","showHeader":true,"showBorder":true,"showLegend":true,"legendPosition":"bottom","showDataLabels":true,"showYGrid":true,"xAxisTitle":"Assigned to","yAxis0Title":"Tickets resolved or closed","dataSources":[{"sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"stateIN5,6","label":"Employee Issue Ticket","id":"ds_agent","dataCategories":["trend","group","simple"]}],"groupBy":[{"groupBy":[{"dataSource":"ds_agent","groupByField":"assigned_to","isChoice":false,"metric":"m_agent"}],"maxNumberOfGroups":"ALL","sortBy":"value","sortByOrder":"desc"}],"metrics":[{"dataSource":"ds_agent","id":"m_agent","aggregateFunction":"COUNT","axisId":"primary","label":"Tickets resolved or closed","numberFormat":{"customFormat":false}}]}</component_props>
+        <h>16</h>
+        <name>Support Team Performance</name>
+        <required_translations>[{"comment":"","message":"Assigned to","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.0723000e783d4736a9c44a6307732abd"},{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.0723000e783d4736a9c44a6307732abd"},{"comment":"","message":"Support Team Performance (tickets resolved per agent)","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.0723000e783d4736a9c44a6307732abd"},{"comment":"","message":"Tickets resolved or closed","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.0723000e783d4736a9c44a6307732abd"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0723000e783d4736a9c44a6307732abd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Support Team Performance</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_widget_0723000e783d4736a9c44a6307732abd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:17</sys_updated_on>
+        <visualization/>
+        <w>24</w>
+        <widget_props/>
+        <x>24</x>
+        <y>48</y>
+    </par_dashboard_widget>
+</record_update>

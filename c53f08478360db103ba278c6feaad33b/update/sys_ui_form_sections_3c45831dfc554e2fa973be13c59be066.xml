@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="3c45831dfc554e2fa973be13c59be066" sys_domain="global" table="x_412993_employe_1_ticket" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c42d60d2f12a41e8a4e73d22943579fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f7255ff5fcc14fbb84bb612ccd1de241</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Assignment" display_value="Assignment" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">a3c1bc34ad1946c0b5740d33681fd7ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8d1db07dfbdc40dfb6a6c8eca44599d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Description" display_value="Description" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">d428a4e994174cd097be13f6c94bc7d9</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4b7557739c2140738da9e84144d14f67</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="On Hold" display_value="On Hold" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">495dce683bbd4048a9b20e456993498b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d71bee4167dc4a1f8990211535ead759</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Resolution" display_value="Resolution" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">7f348478c12244a1bbd836a9b75102a9</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>63fe173b4ca947138e8ebb5b896c9a73</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Reopen" display_value="Reopen" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">7553f41acefa44ce97c0917018ab5a6f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>906c90105dbf4c58bf7e6e446ff5bfe3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Closure" display_value="Closure" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">fef62c4cb1a141bf95113d09650695a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5535260c83d24d5d960427682aecdbaa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_412993_employe_1_ticket" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">3c45831dfc554e2fa973be13c59be066</sys_ui_form>
+            <sys_ui_section caption="Notes" display_value="Notes" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">d878391747e0439397c941900b101173</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_412993_employe_1_ticket</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-18 18:01:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3c45831dfc554e2fa973be13c59be066</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_412993_employe_1_ticket</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+            <sys_update_name>sys_ui_form_sections_3c45831dfc554e2fa973be13c59be066</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-18 18:01:30</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

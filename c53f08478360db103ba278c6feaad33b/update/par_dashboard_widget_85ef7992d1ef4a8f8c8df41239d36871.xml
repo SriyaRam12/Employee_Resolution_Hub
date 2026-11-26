@@ -5,7 +5,7 @@
         <component_props>{"label":"Unassigned work in my groups","variant":"header-secondary","level":"1","align":"start"}</component_props>
         <h>3</h>
         <name>Unassigned work in my groups</name>
-        <required_translations/>
+        <required_translations>[{"comment":"","message":"Unassigned work in my groups","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.85ef7992d1ef4a8f8c8df41239d36871"}]</required_translations>
         <stored_component/>
         <sys_class_name>par_dashboard_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Task table schema" source="com.glide.task">d521b6f78c5103100a22deb6dd2b4e5d</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:13</sys_created_on>
+        <sys_id>cc9cb44783a4db103ba278c6feaad342</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:13</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

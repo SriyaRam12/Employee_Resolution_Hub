@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="DELETE">
+        <can_read>true</can_read>
+        <can_share>true</can_share>
+        <can_write>true</can_write>
+        <dashboard display_value="Support Staff Dashboard">1f29dbdb83e09f103ba278c6feaad3c7</dashboard>
+        <group/>
+        <owner>false</owner>
+        <role/>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 01:18:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>642a2bd383649f103ba278c6feaad33f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>1f29dbdb83e09f103ba278c6feaad3c7</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_permission_642a2bd383649f103ba278c6feaad33f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 01:40:07</sys_updated_on>
+        <user display_value="Test Support">6c1123db83249f103ba278c6feaad3c9</user>
+    </par_dashboard_permission>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</application>
+        <file_path/>
+        <instance_id>747e9a3ddb6ab91c05ef17291396194b</instance_id>
+        <instance_name>dev214709</instance_name>
+        <name>par_dashboard_permission_642a2bd383649f103ba278c6feaad33f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission"><par_dashboard_permission action="INSERT_OR_UPDATE"><can_read>true</can_read><can_share>true</can_share><can_write>true</can_write><dashboard display_value="Support Staff Dashboard">1f29dbdb83e09f103ba278c6feaad3c7</dashboard><group/><owner>false</owner><role/><sys_class_name>par_dashboard_permission</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-20 01:18:02</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>642a2bd383649f103ba278c6feaad33f</sys_id><sys_mod_count>2</sys_mod_count><sys_name>1f29dbdb83e09f103ba278c6feaad3c7</sys_name><sys_overrides/><sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package><sys_policy/><sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope><sys_update_name>par_dashboard_permission_642a2bd383649f103ba278c6feaad33f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-20 01:40:07</sys_updated_on><user display_value="Test Support">6c1123db83249f103ba278c6feaad3c9</user></par_dashboard_permission></record_update>]]></payload>
+        <payload_hash>553712384</payload_hash>
+        <record_name>1f29dbdb83e09f103ba278c6feaad3c7</record_name>
+        <reverted_from/>
+        <source>101d3cc783a4db103ba278c6feaad356</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 01:40:07</sys_created_on>
+        <sys_id>083fe35783a49f103ba278c6feaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f69c67130000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 01:40:07</sys_updated_on>
+        <type>PAR Dashboard Permission</type>
+        <update_guid>f72fa3576ca49f1021097f64d3c090ff</update_guid>
+        <update_guid_history>f72fa3576ca49f1021097f64d3c090ff:553712384,904a63d357649f1088a27b343025f71f:-183294085,2c2a2bd30d649f103583c3f4f1a22042:553712384</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Support Staff Dashboard">1d14f39f83a49f103ba278c6feaad317</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 02:01:31</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_permission">par_dashboard_permission</sys_db_object>
+        <sys_id>2c21f723a80742ac9825102cad8ffd10</sys_id>
+        <sys_metadata>642a2bd383649f103ba278c6feaad33f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1f29dbdb83e09f103ba278c6feaad3c7</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_scope_delete display_value="">28abafc21b3d46f68618933d2f433b81</sys_scope_delete>
+        <sys_update_name>par_dashboard_permission_642a2bd383649f103ba278c6feaad33f</sys_update_name>
+        <sys_update_version display_value="par_dashboard_permission_642a2bd383649f103ba278c6feaad33f">083fe35783a49f103ba278c6feaad300</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 02:01:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

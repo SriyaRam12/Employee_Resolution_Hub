@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_canvas">
+    <par_dashboard_canvas action="DELETE">
+        <dashboard display_value="Employee Service Manager Dashboard">fcb8c59f83e05f103ba278c6feaad3b2</dashboard>
+        <dashboard_tab display_value="New Tab 3">76a9051383245f103ba278c6feaad3fb</dashboard_tab>
+        <layout>[]</layout>
+        <sys_class_name>par_dashboard_canvas</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 13:36:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>36a9051383245f103ba278c6feaad3ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_canvas_36a9051383245f103ba278c6feaad3ff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 13:36:57</sys_updated_on>
+    </par_dashboard_canvas>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</application>
+        <file_path/>
+        <instance_id>747e9a3ddb6ab91c05ef17291396194b</instance_id>
+        <instance_name>dev214709</instance_name>
+        <name>par_dashboard_canvas_36a9051383245f103ba278c6feaad3ff</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_canvas"><par_dashboard_canvas action="INSERT_OR_UPDATE"><dashboard display_value="Employee Service Manager Dashboard">fcb8c59f83e05f103ba278c6feaad3b2</dashboard><dashboard_tab display_value="New Tab 3">76a9051383245f103ba278c6feaad3fb</dashboard_tab><layout>[]</layout><sys_class_name>par_dashboard_canvas</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-19 13:36:57</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>36a9051383245f103ba278c6feaad3ff</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package><sys_policy/><sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope><sys_update_name>par_dashboard_canvas_36a9051383245f103ba278c6feaad3ff</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-19 13:36:57</sys_updated_on></par_dashboard_canvas></record_update>]]></payload>
+        <payload_hash>861139634</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>101d3cc783a4db103ba278c6feaad356</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 13:36:57</sys_created_on>
+        <sys_id>f6a9451383245f103ba278c6feaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f406540b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 13:36:57</sys_updated_on>
+        <type>PAR Dashboard Page Canvas</type>
+        <update_guid>b6a9451351245f10b12efbf788a76c01</update_guid>
+        <update_guid_history>b6a9451351245f10b12efbf788a76c01:861139634</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">1c9b011783245f103ba278c6feaad306</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 13:45:15</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_canvas">par_dashboard_canvas</sys_db_object>
+        <sys_id>1656229390154a6e849fca47cb900349</sys_id>
+        <sys_metadata>36a9051383245f103ba278c6feaad3ff</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_scope_delete display_value="">28abafc21b3d46f68618933d2f433b81</sys_scope_delete>
+        <sys_update_name>par_dashboard_canvas_36a9051383245f103ba278c6feaad3ff</sys_update_name>
+        <sys_update_version display_value="par_dashboard_canvas_36a9051383245f103ba278c6feaad3ff">f6a9451383245f103ba278c6feaad302</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 13:45:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

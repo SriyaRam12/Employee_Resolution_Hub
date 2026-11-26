@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="DELETE">
+        <canvas display_value="">5f299fdb83e09f103ba278c6feaad3f1</canvas>
+        <component display_value="Single score">d24d53f60350de7a652caf3188a46ed2</component>
+        <component_props>{"configVersion":"23.0.0-ci-SNAPSHOT","scoreSize":"auto","scoreAlignment":"start","headingPosition":"top","sparklineStyle":"area","scoreIcon":"","iconStyle":"background","showScoreDate":false,"useRelativeScoreTime":false,"showScoreUpdateTime":false,"showZero":true,"wrapElements":false,"colorConfig":{"type":"default"},"newReporting":false,"enableAddZerosAtApi":true,"additionalGroupByConfig":[],"dataSources":[{"isDatabaseView":false,"allowRealTime":true,"label":"Employee Issue Ticket","sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"assigned_to=6816f79cc0a8016401c5a33be04be441^state=4","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGV4XzQxMjk5M19lbXBsb3llXzFfdGlja2V0MTc5NTEzMzQ3MjM4OQ==","dataCategories":["trend","group","simple"]}],"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"hideMatrixAggregate":false,"lineClamp":1,"headerTitleAlignment":"start","wrapTitle":false,"showLoadingIndicator":false,"showHeaderSeparator":false,"contextMenuActions":[],"headerTitle":"My On Hold Tickets","headingLevel":2,"showBorder":true,"bareBorder":false,"telemetry":null,"showDataPassthrough":false,"showAdditionalGroupBySelector":false,"allowAdditionalGroupByPerMetric":false,"metrics":[{"dataSource":"dGFibGV4XzQxMjk5M19lbXBsb3llXzFfdGlja2V0MTc5NTEzMzQ3MjM4OQ==","id":"ZEdGaWJHVjRYelF4TWprNU0xOWxiWEJzYjNsbFh6RmZkR2xqYTJWME1UYzVOVEV6TXpRM01qTTRPUT09MTc5NTEzMzQ3NTEwNQ==","aggregateFunction":"COUNT","numberFormat":{"customFormat":false},"axisId":"primary"}],"groupBy":null,"filterPerMetric":[],"sortBy":"value","sortByOrder":"desc","trendBy":null,"showChange":false,"showChangePercentage":false,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":false,"showSparkline":false,"showMetricLabel":false,"showThreshold":false,"showComment":false,"followFilters":true,"showFilterIcon":true,"enableRealTimeUpdate":false,"enableDrilldown":true,"enableClickAndStay":false,"showDataTable":false,"enableCustomEmptyState":false,"componentId":"63n60nfd","emptyStateIllustration":"no-data","emptyStateHeading":"No data available.","emptyStateHeadingLevel":3,"emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateAlignment":"vertical-centered","refreshFrequency":null,"hideDevSettings":false,"configPropModifiers":{},"filterConfigurations":"@state.parFilters","showMaximumRange":false,"allowChangeDateRange":false,"showDateRangeByDefault":false,"applyDateRange":false,"numberOfPeriods":3,"showAbsolutePeriod":false,"autoAggregatePeriods":false,"scoreType":null,"showChangeFrom":false,"useCurrentDateForEnd":false,"period":"M","useDataCache":false,"cacheExpirationTime":0,"showCacheTime":true,"dateFormat":"default","showRefresh":true,"showExportOptions":true,"showFilterAsSeparateSeries":false,"userInfo":"@context.session.user","colors":{}}</component_props>
+        <h>12</h>
+        <name/>
+        <required_translations>[{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"},{"comment":"","message":"My On Hold Tickets","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"},{"comment":"","message":"No data available.","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"},{"comment":"","message":"There are no scores available for the selected criteria. Contact your admin for more info.","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 00:13:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>605b5b1383249f103ba278c6feaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_widget_605b5b1383249f103ba278c6feaad36f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 00:13:19</sys_updated_on>
+        <visualization/>
+        <w>12</w>
+        <widget_props>{"filterPerMetric":[],"refreshFrequency":null,"headerTitle":"My On Hold Tickets"}</widget_props>
+        <x>24</x>
+        <y>0</y>
+    </par_dashboard_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</application>
+        <file_path/>
+        <instance_id>747e9a3ddb6ab91c05ef17291396194b</instance_id>
+        <instance_name>dev214709</instance_name>
+        <name>par_dashboard_widget_605b5b1383249f103ba278c6feaad36f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget"><par_dashboard_widget action="INSERT_OR_UPDATE"><canvas display_value="">5f299fdb83e09f103ba278c6feaad3f1</canvas><component display_value="Single score">d24d53f60350de7a652caf3188a46ed2</component><component_props>{"configVersion":"23.0.0-ci-SNAPSHOT","scoreSize":"auto","scoreAlignment":"start","headingPosition":"top","sparklineStyle":"area","scoreIcon":"","iconStyle":"background","showScoreDate":false,"useRelativeScoreTime":false,"showScoreUpdateTime":false,"showZero":true,"wrapElements":false,"colorConfig":{"type":"default"},"newReporting":false,"enableAddZerosAtApi":true,"additionalGroupByConfig":[],"dataSources":[{"isDatabaseView":false,"allowRealTime":true,"label":"Employee Issue Ticket","sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"assigned_to=6816f79cc0a8016401c5a33be04be441^state=4","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGV4XzQxMjk5M19lbXBsb3llXzFfdGlja2V0MTc5NTEzMzQ3MjM4OQ==","dataCategories":["trend","group","simple"]}],"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"hideMatrixAggregate":false,"lineClamp":1,"headerTitleAlignment":"start","wrapTitle":false,"showLoadingIndicator":false,"showHeaderSeparator":false,"contextMenuActions":[],"headerTitle":"My On Hold Tickets","headingLevel":2,"showBorder":true,"bareBorder":false,"telemetry":null,"showDataPassthrough":false,"showAdditionalGroupBySelector":false,"allowAdditionalGroupByPerMetric":false,"metrics":[{"dataSource":"dGFibGV4XzQxMjk5M19lbXBsb3llXzFfdGlja2V0MTc5NTEzMzQ3MjM4OQ==","id":"ZEdGaWJHVjRYelF4TWprNU0xOWxiWEJzYjNsbFh6RmZkR2xqYTJWME1UYzVOVEV6TXpRM01qTTRPUT09MTc5NTEzMzQ3NTEwNQ==","aggregateFunction":"COUNT","numberFormat":{"customFormat":false},"axisId":"primary"}],"groupBy":null,"filterPerMetric":[],"sortBy":"value","sortByOrder":"desc","trendBy":null,"showChange":false,"showChangePercentage":false,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":false,"showSparkline":false,"showMetricLabel":false,"showThreshold":false,"showComment":false,"followFilters":true,"showFilterIcon":true,"enableRealTimeUpdate":false,"enableDrilldown":true,"enableClickAndStay":false,"showDataTable":false,"enableCustomEmptyState":false,"componentId":"63n60nfd","emptyStateIllustration":"no-data","emptyStateHeading":"No data available.","emptyStateHeadingLevel":3,"emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateAlignment":"vertical-centered","refreshFrequency":null,"hideDevSettings":false,"configPropModifiers":{},"filterConfigurations":"@state.parFilters","showMaximumRange":false,"allowChangeDateRange":false,"showDateRangeByDefault":false,"applyDateRange":false,"numberOfPeriods":3,"showAbsolutePeriod":false,"autoAggregatePeriods":false,"scoreType":null,"showChangeFrom":false,"useCurrentDateForEnd":false,"period":"M","useDataCache":false,"cacheExpirationTime":0,"showCacheTime":true,"dateFormat":"default","showRefresh":true,"showExportOptions":true,"showFilterAsSeparateSeries":false,"userInfo":"@context.session.user","colors":{}}</component_props><h>12</h><name/><required_translations>[{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"},{"comment":"","message":"My On Hold Tickets","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"},{"comment":"","message":"No data available.","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"},{"comment":"","message":"There are no scores available for the selected criteria. Contact your admin for more info.","code":"PAR_DASHBOARD.5f299fdb83e09f103ba278c6feaad3f1.605b5b1383249f103ba278c6feaad36f"}]</required_translations><stored_component/><sys_class_name>par_dashboard_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-20 00:13:19</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>605b5b1383249f103ba278c6feaad36f</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package><sys_policy/><sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope><sys_update_name>par_dashboard_widget_605b5b1383249f103ba278c6feaad36f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-20 00:13:19</sys_updated_on><visualization/><w>12</w><widget_props>{"filterPerMetric":[],"refreshFrequency":null,"headerTitle":"My On Hold Tickets"}</widget_props><x>24</x><y>0</y></par_dashboard_widget></record_update>]]></payload>
+        <payload_hash>1327612924</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>101d3cc783a4db103ba278c6feaad356</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 00:13:19</sys_created_on>
+        <sys_id>685b5b1383249f103ba278c6feaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f64ceff30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 00:13:19</sys_updated_on>
+        <type>PAR Dashboard Widget</type>
+        <update_guid>285b5b130d249f10918c6c6067dacf71</update_guid>
+        <update_guid_history>285b5b130d249f10918c6c6067dacf71:1327612924</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">ee3c579383249f103ba278c6feaad321</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 00:17:17</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_widget">par_dashboard_widget</sys_db_object>
+        <sys_id>127cd2ba7892424987f185c104c23221</sys_id>
+        <sys_metadata>605b5b1383249f103ba278c6feaad36f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_scope_delete display_value="">28abafc21b3d46f68618933d2f433b81</sys_scope_delete>
+        <sys_update_name>par_dashboard_widget_605b5b1383249f103ba278c6feaad36f</sys_update_name>
+        <sys_update_version display_value="par_dashboard_widget_605b5b1383249f103ba278c6feaad36f">685b5b1383249f103ba278c6feaad372</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 00:17:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

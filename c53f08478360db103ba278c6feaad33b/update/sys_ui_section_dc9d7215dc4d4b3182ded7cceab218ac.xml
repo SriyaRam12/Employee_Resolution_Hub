@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Employee Issue" section_id="dc9d7215dc4d4b3182ded7cceab218ac" sys_domain="global" table="x_412993_employe_1_ticket" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>0d2eacd20aa7434cb8e4279997a5f828</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>e80f4500d5ce477ab998f26b5cde9a87</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>requester</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>4aeedfb093154d3aa8a3743238624d5f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opened_at</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>2d5b60a8cc28452e85e33f00a39fbddb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>6de76e731c26431ebb6e2aa1264cba17</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>679a449beb284c1eaa10e5c3ef3310ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>subcategory</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>57e7dabb0c554f79bc0cd3687183e38f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>db7c1fa857d1447e804d758df7c43f97</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:28</sys_created_on>
+            <sys_id>a5553e03228a4a7ea907bdfd2e6c8005</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Employee Issue" display_value="Employee Issue" name="x_412993_employe_1_ticket" sys_domain="global" view="Default view">dc9d7215dc4d4b3182ded7cceab218ac</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Employee Issue</caption>
+            <header>false</header>
+            <name>x_412993_employe_1_ticket</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-18 18:01:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dc9d7215dc4d4b3182ded7cceab218ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_412993_employe_1_ticket</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+            <sys_update_name>sys_ui_section_dc9d7215dc4d4b3182ded7cceab218ac</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-18 18:01:33</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

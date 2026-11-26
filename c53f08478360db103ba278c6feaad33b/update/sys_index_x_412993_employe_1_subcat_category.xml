@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_index">
+    <sys_index action="INSERT_OR_UPDATE">
+        <access_method/>
+        <col_name_string>category</col_name_string>
+        <index_col_name element="category" name="x_412993_employe_1_subcat">27f4a80bd09646f6ae32817cad38864f</index_col_name>
+        <logical_table_name>x_412993_employe_1_subcat</logical_table_name>
+        <sys_class_name>sys_index</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:22</sys_created_on>
+        <sys_id>0314a8fc785440ad9565d3170e4a65cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_412993_employe_1_subcat</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_index_x_412993_employe_1_subcat_category</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:22</sys_updated_on>
+        <table/>
+        <unique_index>false</unique_index>
+    </sys_index>
+</record_update>

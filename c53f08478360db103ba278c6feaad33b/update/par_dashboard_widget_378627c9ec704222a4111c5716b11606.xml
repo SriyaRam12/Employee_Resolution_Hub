@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">038339efc8804d44a6dc817461e1b0cc</canvas>
+        <component display_value="Vertical bar">23051643b7e03010097cb81cde11a910</component>
+        <component_props>{"headerTitle":"Average Resolution Time by Group (hours)","showHeader":true,"showBorder":true,"showLegend":true,"legendPosition":"bottom","showDataLabels":true,"showYGrid":true,"xAxisTitle":"Assignment group","yAxis0Title":"Average resolution time (hours)","dataSources":[{"sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"stateIN5,6","label":"Employee Issue Ticket","id":"ds_avg_group","dataCategories":["trend","group","simple"]}],"groupBy":[{"groupBy":[{"dataSource":"ds_avg_group","groupByField":"assignment_group","isChoice":false,"metric":"m_avg_group"}],"maxNumberOfGroups":"ALL","sortBy":"value","sortByOrder":"desc"}],"metrics":[{"dataSource":"ds_avg_group","id":"m_avg_group","aggregateFunction":"AVG","aggregateField":"resolution_hours","axisId":"primary","label":"Average resolution time (hours)","numberFormat":{"customFormat":true,"rounding":"HALF_UP","decimalPrecision":1,"abbreviationEnabled":false,"numberInTooltipsEnabled":true,"thousandSeparatorEnabled":true}}]}</component_props>
+        <h>16</h>
+        <name>Average Resolution Time by Group</name>
+        <required_translations>[{"comment":"","message":"Assignment group","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.378627c9ec704222a4111c5716b11606"},{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.378627c9ec704222a4111c5716b11606"},{"comment":"","message":"Average Resolution Time by Group (hours)","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.378627c9ec704222a4111c5716b11606"},{"comment":"","message":"Average resolution time (hours)","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.378627c9ec704222a4111c5716b11606"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>378627c9ec704222a4111c5716b11606</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Average Resolution Time by Group</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_widget_378627c9ec704222a4111c5716b11606</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:17</sys_updated_on>
+        <visualization/>
+        <w>24</w>
+        <widget_props/>
+        <x>0</x>
+        <y>48</y>
+    </par_dashboard_widget>
+</record_update>

@@ -4,7 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>Support staff. Can view tickets assigned to them or to their support groups, update state, add work notes and resolve tickets.</description>
         <elevated_privilege>false</elevated_privilege>
-        <federated_id/>
+        <federated_id>TFxeBtRS9UpHjV+IOhfgI27SiQc3EgmSwenlTCgME6w=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_412993_employe_1.support_staff</name>

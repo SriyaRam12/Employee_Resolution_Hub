@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_restricted_caller_access">
+    <sys_restricted_caller_access action="INSERT_OR_UPDATE">
+        <description/>
+        <operation>read</operation>
+        <rca_type>real_rca</rca_type>
+        <source>0c66472a0a0a0b82017c1f3df66a3fe7</source>
+        <source_scope display_value="Global">global</source_scope>
+        <source_table>sys_security_acl</source_table>
+        <source_type>11</source_type>
+        <status>2</status>
+        <sys_class_name>sys_restricted_caller_access</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 16:44:14</sys_created_on>
+        <sys_id>8684351f83285f103ba278c6feaad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>global</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_restricted_caller_access_8684351f83285f103ba278c6feaad373</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 16:44:14</sys_updated_on>
+        <target name="x_412993_employe_1_ticket" target_table="sys_db_object">c2c5bd3ac6fa43e282be1dce02e955ee</target>
+        <target_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</target_scope>
+        <target_table>sys_db_object</target_table>
+        <target_type>1</target_type>
+    </sys_restricted_caller_access>
+</record_update>

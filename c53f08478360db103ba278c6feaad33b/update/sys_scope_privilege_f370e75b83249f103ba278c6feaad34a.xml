@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>execute</operation>
+        <source_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>esr_employee_test</sys_created_by>
+        <sys_created_on>2026-11-20 00:35:57</sys_created_on>
+        <sys_id>f370e75b83249f103ba278c6feaad34a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GlideRecordSecure.getValue</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_scope_privilege_f370e75b83249f103ba278c6feaad34a</sys_update_name>
+        <sys_updated_by>esr_employee_test</sys_updated_by>
+        <sys_updated_on>2026-11-20 00:35:57</sys_updated_on>
+        <target_name>GlideRecordSecure.getValue</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>scriptable</target_type>
+    </sys_scope_privilege>
+</record_update>

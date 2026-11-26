@@ -4,7 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>Support manager. Can view and manage all tickets, reassign work, close resolved tickets and access all reports and dashboards.</description>
         <elevated_privilege>false</elevated_privilege>
-        <federated_id/>
+        <federated_id>MvMGrUHVWEYnT7+F9IWW2H7IfmqlGSjrG1mpSytsbV0=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_412993_employe_1.manager</name>

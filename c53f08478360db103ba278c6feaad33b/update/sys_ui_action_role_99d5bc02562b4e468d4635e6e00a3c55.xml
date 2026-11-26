@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role">
+    <sys_ui_action_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ui_action_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:30</sys_created_on>
+        <sys_id>99d5bc02562b4e468d4635e6e00a3c55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Resolve.</sys_name>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_ui_action display_value="Resolve">68ba6724af81427f9557996d4993b2db</sys_ui_action>
+        <sys_update_name>sys_ui_action_role_99d5bc02562b4e468d4635e6e00a3c55</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:30</sys_updated_on>
+        <sys_user_role display_value="x_412993_employe_1.support_staff" name="x_412993_employe_1.support_staff">4ceefface4054a10af67eeafde07b417</sys_user_role>
+    </sys_ui_action_role>
+</record_update>

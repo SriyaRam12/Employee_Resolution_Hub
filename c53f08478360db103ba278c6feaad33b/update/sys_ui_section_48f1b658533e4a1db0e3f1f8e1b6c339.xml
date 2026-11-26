@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Issue Subcategory" section_id="48f1b658533e4a1db0e3f1f8e1b6c339" sys_domain="global" table="x_412993_employe_1_subcat" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>090b7c03d2fd4c0db552e25a9e50f1af</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>366302764d0b4d69bf81c566abad8c2b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>c2a57242afee4a239e64d5b4f45dfaca</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>31a6adb01c4842d1b6f8785b46a642a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>order</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>1ce81a2918aa4fb581dd68852d45ff58</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>2addf2cc6df147ba8916a44f079a9976</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>e3da07394b194206a85167b0b87ee95d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:27</sys_created_on>
+            <sys_id>3798cebf02044f8f94cc927ff6c30332</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Issue Subcategory" display_value="Issue Subcategory" name="x_412993_employe_1_subcat" sys_domain="global" view="Default view">48f1b658533e4a1db0e3f1f8e1b6c339</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Issue Subcategory</caption>
+            <header>false</header>
+            <name>x_412993_employe_1_subcat</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-18 18:01:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>48f1b658533e4a1db0e3f1f8e1b6c339</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_412993_employe_1_subcat</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+            <sys_update_name>sys_ui_section_48f1b658533e4a1db0e3f1f8e1b6c339</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-18 18:01:32</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

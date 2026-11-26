@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Employee Service &amp; Resolution Hub">8c9b3012b0a04e728a7ea6fba2ba243c</application>
+        <assessment/>
+        <device_type/>
+        <filter table="sys_report">tableSTARTSWITHx_412993_employe_1^ORDERBYname<item endquery="false" field="table" goto="false" newquery="false" operator="STARTSWITH" or="false" value="x_412993_employe_1"/>
+            <item endquery="false" field="" goto="false" newquery="false" operator="ORDERBY" or="false" value="name"/>
+        </filter>
+        <hint>All ESR reports built on the Employee Issue Ticket table.</hint>
+        <homepage/>
+        <image/>
+        <karuna_route/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title/>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>sys_report</name>
+        <order>730</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_412993_employe_1.manager</roles>
+        <route/>
+        <screen/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>52db8b6f40394cdabfe6be814c3fa0e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>All Reports</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_app_module_52db8b6f40394cdabfe6be814c3fa0e8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:18</sys_updated_on>
+        <timeline_page/>
+        <title>All Reports</title>
+        <uncancelable>false</uncancelable>
+        <ux_list/>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

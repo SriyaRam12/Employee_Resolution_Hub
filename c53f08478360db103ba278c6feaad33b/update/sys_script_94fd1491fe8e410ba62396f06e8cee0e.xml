@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_412993_employe_1_ticket</collection>
+        <condition/>
+        <description>Stamps requester, opened_by, opened_at, the initial state, default impact/urgency and active on every newly submitted ticket.</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ESR - Set submission defaults</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[/**
+ * ESR - Set submission defaults   (before / insert / order 100)
+ *
+ * Stamps the identity and intake fields that every ticket needs, no matter
+ * whether the record arrives from a form, a list, the UI page or the REST API.
+ * Nothing here depends on another rule having run first.
+ */
+;(function setSubmissionDefaults(current, previous) {
+    var userId = gs.getUserID()
+
+    if (!current.getValue('requester')) {
+        current.setValue('requester', userId)
+    }
+
+    if (!current.getValue('opened_by')) {
+        current.setValue('opened_by', userId)
+    }
+
+    if (!current.getValue('opened_at')) {
+        current.setValue('opened_at', new GlideDateTime().getValue())
+    }
+
+    if (!current.getValue('state')) {
+        current.setValue('state', '1')
+    }
+
+    if (!current.getValue('impact')) {
+        current.setValue('impact', '3')
+    }
+
+    if (!current.getValue('urgency')) {
+        current.setValue('urgency', '3')
+    }
+
+    current.setValue('active', true)
+})(current, previous)
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>94fd1491fe8e410ba62396f06e8cee0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESR - Set submission defaults</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>sys_script_94fd1491fe8e410ba62396f06e8cee0e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:24</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=94fd1491fe8e410ba62396f06e8cee0e"/>
+</record_update>

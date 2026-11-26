@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">a7ab4c32931449c586e330768e14ac29</canvas>
+        <component display_value="Single score">d24d53f60350de7a652caf3188a46ed2</component>
+        <component_props>{"headerTitle":"On Hold","description":"Tickets waiting on the requester or a third party.","showHeader":true,"showBorder":true,"showZero":true,"dataSources":[{"sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"state=4","label":"Employee Issue Ticket","id":"ds_on_hold","dataCategories":["trend","group","simple"]}],"metrics":[{"dataSource":"ds_on_hold","id":"m_on_hold","aggregateFunction":"COUNT","axisId":"primary","label":"On hold tickets","numberFormat":{"customFormat":false}}]}</component_props>
+        <h>7</h>
+        <name>On Hold Tickets</name>
+        <required_translations>[{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.4e873c2f482740e39d2443a7a6c26da4"},{"comment":"","message":"On Hold","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.4e873c2f482740e39d2443a7a6c26da4"},{"comment":"","message":"Tickets waiting on the requester or a third party.","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.4e873c2f482740e39d2443a7a6c26da4"},{"comment":"","message":"On hold tickets","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.4e873c2f482740e39d2443a7a6c26da4"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4e873c2f482740e39d2443a7a6c26da4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>On Hold Tickets</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_widget_4e873c2f482740e39d2443a7a6c26da4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:17</sys_updated_on>
+        <visualization/>
+        <w>9</w>
+        <widget_props/>
+        <x>18</x>
+        <y>3</y>
+    </par_dashboard_widget>
+</record_update>

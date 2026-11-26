@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
     <sys_user_role_contains action="INSERT_OR_UPDATE">
         <contains display_value="x_412993_employe_1.support_staff" name="x_412993_employe_1.support_staff">4ceefface4054a10af67eeafde07b417</contains>
-        <role display_value="">dba0736796fa451b916ac5da06539dba</role>
+        <role display_value="x_412993_employe_1.manager" name="x_412993_employe_1.manager">dba0736796fa451b916ac5da06539dba</role>
         <sys_class_name>sys_user_role_contains</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-11-18 18:03:18</sys_created_on>

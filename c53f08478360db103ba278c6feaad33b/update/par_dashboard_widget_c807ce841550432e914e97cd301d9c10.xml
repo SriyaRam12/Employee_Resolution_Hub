@@ -5,7 +5,7 @@
         <component_props>{"headerTitle":"Waiting to be picked up","description":"Active tickets routed to one of your support groups that no agent has claimed yet.","showHeader":true,"showBorder":true,"showZero":true,"dataSources":[{"sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"assigned_toISEMPTY^active=true^assignment_groupINjavascript:new x_412993_employe_1.EsrTicketUtils().getUnassignedQueueGroupIds()","label":"Employee Issue Ticket","id":"ds_unassigned_count","dataCategories":["trend","group","simple"]}],"metrics":[{"dataSource":"ds_unassigned_count","id":"m_unassigned_count","aggregateFunction":"COUNT","axisId":"primary","label":"Unassigned tickets","numberFormat":{"customFormat":false}}]}</component_props>
         <h>7</h>
         <name>Unassigned in My Groups</name>
-        <required_translations/>
+        <required_translations>[{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.c807ce841550432e914e97cd301d9c10"},{"comment":"","message":"Waiting to be picked up","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.c807ce841550432e914e97cd301d9c10"},{"comment":"","message":"Active tickets routed to one of your support groups that no agent has claimed yet.","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.c807ce841550432e914e97cd301d9c10"},{"comment":"","message":"Unassigned tickets","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.c807ce841550432e914e97cd301d9c10"}]</required_translations>
         <stored_component/>
         <sys_class_name>par_dashboard_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>

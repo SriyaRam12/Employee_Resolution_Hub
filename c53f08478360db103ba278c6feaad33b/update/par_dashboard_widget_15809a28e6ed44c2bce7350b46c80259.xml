@@ -5,7 +5,7 @@
         <component_props>{"headerTitle":"Unassigned Tickets","showHeader":true,"showBorder":true,"table":"x_412993_employe_1_ticket","columns":"number,short_description,category,priority,state,assignment_group,requester,opened_at","limit":30,"showLinks":true,"showViewAll":true,"showColumnSorting":true,"wrapCellContent":false,"dataSources":[{"sourceType":"table","tableOrViewName":"x_412993_employe_1_ticket","filterQuery":"assigned_toISEMPTY^active=true^assignment_groupINjavascript:new x_412993_employe_1.EsrTicketUtils().getUnassignedQueueGroupIds()^ORDERBYpriority^ORDERBYopened_at","label":"Employee Issue Ticket","id":"ds_unassigned_list","dataCategories":["trend","group","simple"]}],"metrics":[{"dataSource":"ds_unassigned_list","id":"m_unassigned_list","aggregateFunction":"COUNT","axisId":"primary","label":"Tickets","numberFormat":{"customFormat":false}}]}</component_props>
         <h>16</h>
         <name>Unassigned Tickets</name>
-        <required_translations/>
+        <required_translations>[{"comment":"","message":"Tickets","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.15809a28e6ed44c2bce7350b46c80259"},{"comment":"","message":"Unassigned Tickets","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.15809a28e6ed44c2bce7350b46c80259"},{"comment":"","message":"Employee Issue Ticket","code":"PAR_DASHBOARD.0a25012dc2e847d788bb0abeacea193d.15809a28e6ed44c2bce7350b46c80259"}]</required_translations>
         <stored_component/>
         <sys_class_name>par_dashboard_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>

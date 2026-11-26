@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">038339efc8804d44a6dc817461e1b0cc</canvas>
+        <component display_value="Heading">1f6e0643eca7a637e36bd7833549ec9e</component>
+        <component_props>{"label":"Team performance","variant":"header-secondary","level":"1","align":"start"}</component_props>
+        <h>3</h>
+        <name>Team performance</name>
+        <required_translations>[{"comment":"","message":"Team performance","code":"PAR_DASHBOARD.2587a7c44a9c4fbeba74e732de68d4ea.8013358a05804b3aad3be9778300bccb"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-18 18:01:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8013358a05804b3aad3be9778300bccb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Team performance</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+        <sys_update_name>par_dashboard_widget_8013358a05804b3aad3be9778300bccb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-18 18:01:17</sys_updated_on>
+        <visualization/>
+        <w>48</w>
+        <widget_props/>
+        <x>0</x>
+        <y>29</y>
+    </par_dashboard_widget>
+</record_update>

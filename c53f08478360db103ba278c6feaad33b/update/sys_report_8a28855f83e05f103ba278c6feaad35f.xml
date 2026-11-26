@@ -49,7 +49,7 @@
         <exp_report_attrs>true</exp_report_attrs>
         <field>state</field>
         <field_list>number,requester,category,subcategory,short_description,priority,state,assignment_group,assigned_to,sys_updated_on</field_list>
-        <filter table="x_412993_employe_1_ticket">state=3<item display_value="Closed Complete" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="3"/>
+        <filter table="x_412993_employe_1_ticket">state=3<item display_value="In Progress" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="3"/>
         </filter>
         <formatting_configuration>{"table":"incident","stringFormattingProperties":{},"durationFormattingProperties":{},"dateFormattingProperties":{},"numberFormattingProperties":{}}</formatting_configuration>
         <from/>

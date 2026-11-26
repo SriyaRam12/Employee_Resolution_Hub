@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="96dd432a2c1542aab7e7f11e19b3e889" label="Issue Subcategory" name="x_412993_employe_1_subcat" type="collection">
+        <element choice="3" label="Category" mandatory="true" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Other" sequence="5" value="other"/>
+                <element inactive_on_update="false" label="Network" sequence="3" value="network"/>
+                <element inactive_on_update="false" label="Software" sequence="2" value="software"/>
+                <element inactive_on_update="false" label="Hardware" sequence="1" value="hardware"/>
+                <element inactive_on_update="false" label="Access" sequence="4" value="access"/>
+            </choice>
+        </element>
+        <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element default="100" label="Order" name="order" type="integer"/>
+        <element default="true" label="Active" name="active" type="boolean"/>
+        <element label="Description" max_length="255" name="description" type="string"/>
+        <index name="index">
+            <element name="category"/>
+        </index>
+    </element>
+</database>

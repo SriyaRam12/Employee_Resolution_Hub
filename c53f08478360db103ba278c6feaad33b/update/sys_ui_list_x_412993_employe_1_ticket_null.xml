@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_412993_employe_1_ticket" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>ebf991f3e7094583bd9291fe65947892</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>requester</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>ccb2101677204f31ae556860d9e4bb7c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>category</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>e13e28a66ff44a80a6a945a8b96e8fac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>subcategory</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>c3932b650484424ca120141be8c22625</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>short_description</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>b85317b9b36747329d4affe2e7bc2f91</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>priority</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>6d2df93d34684f9ea473234f0daacde1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>state</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>43de20e917ef4d82a93f80b3fa6d51d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assignment_group</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>2194f2ad448e4ee8b804c272c966bf51</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assigned_to</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>7396514da4cc4588b13364ae983e473c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_on</element>
+            <list_id display_value="x_412993_employe_1_ticket" element="NULL" name="x_412993_employe_1_ticket" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3f7b3b50e3c4c7cab6aed765e3aaf95</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_id>079edef1ff83433d9b68dbd2cdc0f12f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_412993_employe_1_ticket</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-20 04:40:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d3f7b3b50e3c4c7cab6aed765e3aaf95</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_412993_employe_1_ticket</sys_name>
+            <sys_package display_value="Employee Service and Resolution Hub" source="x_412993_employe_1">c53f08478360db103ba278c6feaad33b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Employee Service and Resolution Hub">c53f08478360db103ba278c6feaad33b</sys_scope>
+            <sys_update_name>sys_ui_list_x_412993_employe_1_ticket_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-20 04:40:26</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
